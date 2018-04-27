@@ -18,6 +18,8 @@
 
 	<tr><td><input name="pwd" type="button" value="我的邀请"
 	onclick="javascript:location.href='${pageContext.request.contextPath }/Login/reg'"/></td></tr>
+	<tr><td><input name="pwd" type="button" value="加入课题"
+	onclick="javascript:location.href='${pageContext.request.contextPath }/Login/reg'"/></td></tr>
 	
 </table>
 	

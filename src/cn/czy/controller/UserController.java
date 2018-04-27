@@ -17,11 +17,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.sun.org.apache.xalan.internal.lib.ExsltBase;
 
 import cn.czy.pojo.Activity;
+import cn.czy.pojo.Invite;
 import cn.czy.pojo.Joined;
 import cn.czy.pojo.ResumeWithBLOBs;
 import cn.czy.service.ActivityService;
 import cn.czy.service.JoinService;
 import cn.czy.service.ResumeService;
+import cn.czy.service.InviteService;
 
 
 @Controller
@@ -37,6 +39,8 @@ public class UserController {
 	@Autowired
 	private ActivityService activityService;
 	
+	@Autowired
+	private InviteService inviteService;
 	@RequestMapping("/resume/{userId}")
 	public String findResumeByUserId(@PathVariable("userId") int userId,Model model) throws Exception{
 	
@@ -137,4 +141,20 @@ public class UserController {
 		
 		return "forward:invite/"+ActivityId;
 	}
+	//邀请返回结果不刷新页面
+//	@RequestMapping("/inviteByUserId/{ActivityId}/{invitedId}")
+//	public String inviteByUserId(@PathVariable("ActivityId") int activityId,@PathVariable("invitedId") int invitedId,
+//			HttpServletRequest request) throws Exception{
+//		Invite invite=new Invite();
+//		invite.setActivityId(activityId);
+//		invite.setCreatetime(new Date());
+//		invite.setInviterId((Integer) request.getSession().getAttribute("userId"));
+//		invite.setIsaccept((byte) 0);
+//		invite.setUserId(invitedId);
+//		inviteService.insertInviteByExample(invite);
+//		
+//	}
+	
+
+	
 }
