@@ -7,18 +7,38 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>登录</title>
+<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
 </head>
 <body> 
-<form action="${pageContext.request.contextPath }/Login/login" method="post">
-<table>
-	<tr><td>用户名：<input name="username" type="text"/></td></tr>
-	<tr><td>密码：<input name="pwd" type="password"/></td></tr>
-	<tr><td><input name="" value="登录" type="submit" /></td></tr>
-	<tr><td><input name="" value="注册" type="button" 
-	onclick="javascript:location.href='${pageContext.request.contextPath }/Login/reg'"/></td></tr>
-</table>
+
+<div style="width:500px;margin:20% auto;border:1px solid #ccc;padding:10px;">
+<form action="${pageContext.request.contextPath }/Login/login" method="post" class="form-horizontal">
+
+    <div class="form-group">
+        <label class="control-label col-md-3">用户名:</label>
+        <div class="col-md-6">
+            <input type="text" name="username" class = "form-control"/>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-3">密码:</label>
+        <div class="col-md-6">
+            <input type="password" name="pwd" class = "form-control"/>
+        </div>
+    </div>
+    
+    <div class="form-group">
+       <div class="col-md-offset-3 col-md-3">
+           <input name="" value="登录" type="submit" class="btn-info form-control"/>
+       </div>
+       <div class="col-md-3">
+           <input name="" value="注册" type="button" class="btn-primary form-control"
+	onclick="javascript:location.href='${pageContext.request.contextPath }/Login/reg'"/>
+       </div>
+    </div>   
 	
 </form>
+</div>
 </body>
 
 </html>
